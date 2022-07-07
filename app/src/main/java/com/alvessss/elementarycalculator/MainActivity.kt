@@ -78,6 +78,9 @@ private class ArithmeticCalculator(context: AppCompatActivity) {
                 if (displayValue != 0.0) {
                     result = displayValue
                 }
+            }
+            else if (result == displayValue) {
+
             } else {
                 result = operator.calculate(result, displayValue)
                 display.textView.text = if (result.canBeInt()) result.toInt().toString() else result.toString()
@@ -119,7 +122,7 @@ private class ArithmeticCalculator(context: AppCompatActivity) {
     private fun getOperator(button: MaterialButton): Operator {
         return when (button.text.toString()) {
             "-" -> Less()
-            "*" -> Times()
+            "x" -> Times()
             "/" -> Divided()
             else -> Plus()
         }
