@@ -1,7 +1,6 @@
 package com.alvessss.elementarycalculator
 
 import android.annotation.SuppressLint
-import android.graphics.Path
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
