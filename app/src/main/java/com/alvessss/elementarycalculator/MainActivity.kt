@@ -79,7 +79,7 @@ private class ArithmeticCalculator(context: AppCompatActivity) {
                     result = displayValue
                 }
             } else {
-                result = operator.calculate(displayValue, result)
+                result = operator.calculate(result, displayValue)
                 display.textView.text = if (result.canBeInt()) result.toInt().toString() else result.toString()
             }
             operator = getOperator(it as MaterialButton)
