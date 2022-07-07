@@ -29,43 +29,6 @@ fun Double.canBeInt(): Boolean {
 
 @SuppressLint("SetTextI18n")
 private class ArithmeticCalculator(context: AppCompatActivity) {
-    /*
-        RESULT
-        OPERATION
-        STATE
-        DISPLAY
-
-        InitialState:
-            RESULT = 0
-            OPERATION = null
-            if a operation-button be clicked:
-                STATE = CalculatingState
-
-        CalculatingState:
-            if RESULT is 0:
-                if display-value is not 0:
-                    RESULT = display-value
-            else:
-                RESULT = OPERATION(display-value, RESULT)
-                DISPLAY(RESULT)
-            OPERATION = chosen-operation
-            STATE = WaitingState
-
-        WaitingState:
-            if a number-button be clicked:
-                if display-value is RESULT:
-                    DISPLAY(number-button.text)
-                else
-                    DISPLAY(display-value + number-button.text)
-
-            if a operation-button be clicked:
-                STATE = CalculatingState
-
-        CalculatedState:
-            DISPLAY(RESULT)
-            STATE = InitialState
-     */
-
     private val display: Display = Display(context)
     private val buttons: Buttons = Buttons(context)
     private var operator: Operator = Plus()
@@ -80,7 +43,7 @@ private class ArithmeticCalculator(context: AppCompatActivity) {
                 }
             }
             else if (result == displayValue) {
-
+                // do nothing
             } else {
                 result = operator.calculate(result, displayValue)
                 display.textView.text = if (result.canBeInt()) result.toInt().toString() else result.toString()
